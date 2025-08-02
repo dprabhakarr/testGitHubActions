@@ -1,0 +1,13 @@
+# .github/workflows/ci.yml
+
+name: Hello CI
+
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Greet
+      run: echo "Hello, CI from GitHub Actions!"
