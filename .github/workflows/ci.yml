@@ -7,13 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
+
+    - name: Create dummy package.json
+      run: |
+        echo '{ "name": "demo", "version": "1.0.0", "scripts": { "test": "echo Hello from GitHub Actions!" } }' > package.json
 
     - name: Install dependencies
       run: npm install
