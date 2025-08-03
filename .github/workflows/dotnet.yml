@@ -20,10 +20,11 @@ jobs:
         dotnet-version: 8.0.x  # Change if you use a different version
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore MyApp/MyApp.csproj
 
     - name: Build project
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build MyApp/MyApp.csproj --configuration Release
+
 
     - name: Run tests
       run: dotnet test --no-build --verbosity normal
